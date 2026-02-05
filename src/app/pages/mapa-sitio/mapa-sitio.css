@@ -156,7 +156,7 @@ h1 {
     text-decoration: none;
     color: #4b5563;
     /* Gray 700 (neutral, no blue) */
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     display: inline-block;
     border-radius: 12px;
