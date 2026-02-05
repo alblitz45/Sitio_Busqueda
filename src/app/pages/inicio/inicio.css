@@ -27,7 +27,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-bottom: 0.1em;
-    /* Evita que se recorten letras como la 'y' */
     margin-bottom: 1rem;
 }
 
