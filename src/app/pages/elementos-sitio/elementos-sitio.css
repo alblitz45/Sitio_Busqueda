@@ -1,0 +1,53 @@
+.hero-section {
+    background: linear-gradient(135deg, #171717 0%, #262626 100%);
+    padding: 60px 0;
+    border-radius: 30px;
+    margin-bottom: 3rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover .feature-icon {
+    background: #dc2626;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.info-section {
+    background-color: #ffffff;
+    padding: 45px;
+    border-radius: 24px;
+    margin-top: 3rem;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.card-title {
+    color: #171717 !important;
+    /* Overriding global red title for this specific page if needed */
+    font-weight: 700;
+}

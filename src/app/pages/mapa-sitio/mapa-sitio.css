@@ -1,0 +1,228 @@
+h1 {
+    font-size: 2rem;
+}
+
+/* Tree Container */
+.tree-container {
+    overflow-x: auto;
+    padding: 0 0 20px 0;
+    text-align: center;
+    min-height: 500px;
+    width: 100%;
+}
+
+.tree {
+    display: table;
+    /* Changed from inline-block to allow full width scaling */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: space-evenly;
+    /* Spread items across full width */
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+}
+
+.tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    /* Balanced spacing */
+    transition: all 0.5s;
+    flex-grow: 1;
+    /* Allow items to grow to fill space */
+}
+
+/* Connectors */
+.tree li::before,
+.tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #cbd5e1;
+    width: 50%;
+    height: 15px;
+}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #cbd5e1;
+}
+
+/* Remove connectors from the single root */
+.tree li:only-child::after,
+.tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 1px solid #cbd5e1;
+    border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* Downward path from the parent node */
+.tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #fca5a5;
+    /* Red 300 */
+    width: 0;
+    height: 20px;
+    /* Increased to match standard padding */
+}
+
+/* Specific connector length for the deep vertical stacks */
+.tree ul ul ul::before {
+    height: 40px;
+    /* Matches the 40px padding-top of vertical lists */
+}
+
+/* Vertical Stacking for Level 3 */
+.tree ul ul ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    /* Increased gap between vertical items */
+    padding-top: 40px;
+    /* Increased vertical separation from parent */
+    justify-content: flex-start;
+    /* Reset justify for vertical stacks */
+}
+
+.tree ul ul ul li {
+    padding: 0;
+    width: 100%;
+    flex-grow: 0;
+    position: relative;
+    /* Context for connectors */
+}
+
+/* Hide default horizontal connectors */
+.tree ul ul ul li::after {
+    display: none;
+}
+
+/* Custom vertical connector between items */
+.tree ul ul ul li::before {
+    display: none;
+    /* Default hide */
+}
+
+.tree ul ul ul li:not(:first-child)::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    width: 0;
+    height: 24px;
+    border-left: 1px solid #fca5a5;
+    /* Red 300 */
+    border-top: none;
+    right: auto;
+}
+
+/* Node Styles */
+.node {
+    border: 1px solid #fecaca;
+    /* Red 200 */
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #4b5563;
+    /* Gray 700 (neutral, no blue) */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.05);
+    /* Red tinted shadow */
+    transition: all 0.3s ease;
+    min-width: 160px;
+    position: relative;
+    z-index: 10;
+    white-space: normal;
+}
+
+/* Hover Effects */
+.node:hover {
+    background: #fef2f2;
+    /* Red 50 */
+    border-color: #ef4444;
+    /* Red 500 */
+    color: #da1e28;
+    /* Strong Red */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.15);
+}
+
+.node:hover+ul li::after,
+.node:hover+ul li::before,
+.node:hover+ul::before,
+.node:hover+ul ul::before {
+    border-color: #ef4444;
+    /* Red 500 */
+}
+
+/* Node Variations */
+.node-root {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 20px 30px;
+}
+
+.node-root:hover {
+    color: white;
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+}
+
+.node-category {
+    border-top: 3px solid #dc2626;
+    font-weight: 600;
+}
+
+.node-item {
+    font-size: 0.85rem;
+    color: #64748b;
+    border-style: dashed;
+}
+
+/* Icon styling */
+.node i {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #dc2626;
+}
+
+.node-root i {
+    color: rgba(255, 255, 255, 0.9);
+}

@@ -1,0 +1,152 @@
+/* Search Page Styles - Red Theme ("Rojo Pasión") */
+
+/* Page Title with Underline */
+h2 {
+    color: #1a1a1a;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem !important;
+    /* Force margin */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #dc2626, #fca5a5);
+    /* Red to Light Red */
+    border-radius: 2px;
+}
+
+/* Card Styling Upgrade */
+.card {
+    border: 1px solid #fecaca;
+    /* Red 200 - subtle pink/red border */
+    box-shadow: 0 4px 20px -5px rgba(220, 38, 38, 0.08);
+    /* Soft red shadow */
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.12);
+}
+
+.card-title {
+    color: #991b1b;
+    /* Red 800 - Deep red */
+    font-weight: 700;
+    border-bottom: 1px dashed #fecaca;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.form-control,
+.form-select {
+    border: 2px solid #e5e7eb;
+    /* Neutral gray border initially */
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    background-color: #fcfcfc;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ef4444;
+    /* Red 500 */
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+    /* Red glow */
+    background-color: #fff;
+}
+
+.form-label {
+    color: #4b5563;
+    /* Gray 700 */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    /* Red Gradient */
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 6px 15px rgba(220, 38, 38, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+    border: 2px solid #e5e7eb;
+    color: #6b7280;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+/* Results List */
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #f3f4f6;
+    padding: 16px 20px;
+    transition: background-color 0.2s;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background-color: #fef2f2;
+    /* Red 50 - Very light red tint */
+    cursor: pointer;
+}
+
+.list-group-item .fw-semibold {
+    color: #dc2626;
+    /* Red 600 */
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+}
+
+.list-group-item small.text-muted {
+    columns: #6b7280;
+}
+
+/* Badge Styling */
+.badge.text-bg-secondary {
+    background-color: #fee2e2 !important;
+    /* Red 100 */
+    color: #991b1b !important;
+    /* Red 800 */
+    border: 1px solid #fecaca;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+}

@@ -1,0 +1,79 @@
+<div class="page-header text-center mb-3">
+    <h1 class="display-5 fw-bold mb-0">Mapa del sitio</h1>
+</div>
+
+<div class="tree-container">
+    <div class="tree">
+        <ul>
+            <li>
+                <a routerLink="/" class="node node-root">
+                    <i class="bi bi-house-door-fill"></i>
+                    Inicio
+                </a>
+
+                <ul>
+                    <!-- Breadcrumbs -->
+                    <li>
+                        <a routerLink="/breadcrumbs" class="node node-category">
+                            <i class="bi bi-signpost-2"></i>
+                            Breadcrumbs
+                        </a>
+                        <ul>
+                            <li><span class="node node-item">Definición</span></li>
+                            <li><span class="node node-item">Tipos</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Elementos -->
+                    <li>
+                        <a routerLink="/elementos" class="node node-category">
+                            <i class="bi bi-ui-checks-grid"></i>
+                            Elementos
+                        </a>
+                        <ul>
+                            <li><span class="node node-item">Elementos</span></li>
+                            <li><span class="node node-item">Jerarquía</span></li>
+                            <li><span class="node node-item">Flujo de información</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Menú -->
+                    <li>
+                        <a routerLink="/menu" class="node node-category">
+                            <i class="bi bi-list"></i>
+                            Menú
+                        </a>
+                        <ul>
+                            <li><span class="node node-item">Menú global</span></li>
+                            <li><span class="node node-item">Menú responsive</span></li>
+                            <li><span class="node node-item">Menú persistente</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Mapa (Self) -->
+                    <li>
+                        <a routerLink="/mapa-sitio" class="node node-category active-node">
+                            <i class="bi bi-diagram-3"></i>
+                            Mapa del sitio
+                        </a>
+                        <ul>
+                            <li><span class="node node-item">Diagrama</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Búsqueda -->
+                    <li>
+                        <a routerLink="/busqueda" class="node node-category">
+                            <i class="bi bi-search"></i>
+                            Búsqueda
+                        </a>
+                        <ul>
+                            <li><span class="node node-item">Búsqueda avanzada</span></li>
+                            <li><span class="node node-item">Resultados</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

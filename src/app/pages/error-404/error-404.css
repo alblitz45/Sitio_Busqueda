@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
+.error-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    padding: 2rem;
+}
+
+
+/* Error Container */
+.error-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.6);
+    padding: 4rem 3rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
+}
+
+/* Visual 404 */
+.error-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.digit {
+    font-size: clamp(6rem, 15vw, 12rem);
+    font-weight: 900;
+    color: #1f2937;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+}
+
+.digit.glitch {
+    color: #dc2626;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Typography */
+.error-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+.error-message {
+    font-size: 1.125rem;
+    color: #4b5563;
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+/* Premium Button */
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #dc2626;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px -5px rgba(220, 38, 38, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-premium:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 30px -10px rgba(220, 38, 38, 0.6);
+    background: #b91c1c;
+    color: white;
+}
+
+.btn-icon {
+    transition: transform 0.4s ease;
+}
+
+.btn-premium:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.btn-premium:hover i {
+    transform: scale(1.2);
+}
+
+.btn-premium i {
+    transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, 30px) scale(1.1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+    .error-container {
+        padding: 3rem 1.5rem;
+    }
+
+    .error-title {
+        font-size: 1.75rem;
+    }
+
+    .digit {
+        font-size: 5rem;
+    }
+}

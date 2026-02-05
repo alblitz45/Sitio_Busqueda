@@ -1,0 +1,113 @@
+<header class="topbar sticky-top">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Left Section: Brand & Menu -->
+    <div class="d-flex align-items-center gap-2 gap-md-4">
+      <button class="menu-toggler d-md-none" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <i class="bi" [class.bi-list]="!isMenuOpen" [class.bi-x-lg]="isMenuOpen"></i>
+      </button>
+
+      <a routerLink="/" class="brand">Sitio de pruebas</a>
+
+      <nav class="menu d-none d-md-flex">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+        <a routerLink="/breadcrumbs" routerLinkActive="active">Breadcrumbs</a>
+        <a routerLink="/elementos" routerLinkActive="active">Elementos</a>
+        <a routerLink="/menu" routerLinkActive="active">Menú</a>
+        <a routerLink="/mapa-sitio" routerLinkActive="active">Mapa del sitio</a>
+        <a routerLink="/busqueda" routerLinkActive="active">Búsqueda</a>
+      </nav>
+    </div>
+
+    <!-- Right Section: Search -->
+    <form class="d-flex d-none d-sm-flex" (submit)="$event.preventDefault(); goSearch()">
+      <div class="input-group">
+        <input class="form-control search-input border-end-0 rounded-start-pill" type="search" placeholder="Buscar..."
+          aria-label="Search" [(ngModel)]="quickQuery" name="quickQuery">
+        <button class="btn search-btn border-start-0 rounded-end-pill" type="submit">
+          Buscar
+        </button>
+      </div>
+    </form>
+
+  </div>
+
+  <!-- Mobile Menu Transition -->
+  <div class="mobile-menu d-md-none" [class.show]="isMenuOpen">
+    <nav class="container-fluid py-3">
+      <div class="d-flex flex-column gap-2 mobile-links">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleMenu()">Inicio</a>
+        <a routerLink="/breadcrumbs" routerLinkActive="active" (click)="toggleMenu()">Breadcrumbs</a>
+        <a routerLink="/elementos" routerLinkActive="active" (click)="toggleMenu()">Elementos</a>
+        <a routerLink="/menu" routerLinkActive="active" (click)="toggleMenu()">Menú</a>
+        <a routerLink="/mapa-sitio" routerLinkActive="active" (click)="toggleMenu()">Mapa del sitio</a>
+        <a routerLink="/busqueda" routerLinkActive="active" (click)="toggleMenu()">Búsqueda</a>
+
+        <!-- Mobile Search -->
+        <form class="mt-3 d-sm-none" (submit)="$event.preventDefault(); goSearch()">
+          <div class="input-group">
+            <input class="form-control search-input border-end-0 rounded-start-pill" type="search"
+              placeholder="Buscar..." aria-label="Search" [(ngModel)]="quickQuery" name="quickQuery">
+            <button class="btn search-btn border-start-0 rounded-end-pill" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+<main class="content container">
+  <!-- Functional Breadcrumb (optional but commonly good practice) -->
+  <app-breadcrumb class="mb-4 d-block"></app-breadcrumb>
+
+  <!-- Content Page Load -->
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer mt-auto">
+  <div class="container">
+    <div class="row gy-3 border-bottom pb-3 mb-3">
+      <div class="col-lg-5 col-md-12">
+        <img
+          src="https://universidadesdemexico.mx/logos/original/logo-universidad-tecnologica-del-centro-de-veracruz.webp"
+          alt="Logo UTCV" class="footer-logo mb-3">
+        <h5 class="brand-footer mb-2">Sitio de pruebas</h5>
+        <p class="text-footer mb-2 mx-auto">
+          Explorando la arquitectura de la información y estructuras de navegación modernas.
+        </p>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h6 class="text-uppercase fw-bold mb-2 footer-heading">Enlaces</h6>
+        <ul class="list-unstyled footer-links mb-1">
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a routerLink="/mapa-sitio">Mapa del sitio</a></li>
+          <li><a routerLink="/busqueda">Búsqueda avanzada</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-6">
+        <h6 class="text-uppercase fw-bold mb-2 footer-heading">Contacto</h6>
+        <ul class="list-unstyled footer-links mb-1">
+          <li><i class="bi bi-geo-alt me-2"></i>Veracruz, México</li>
+          <li><i class="bi bi-envelope me-2"></i> 20233L001008@utcv.edu.mx</li>
+          <li><i class="bi bi-github me-2"></i>alblitz45</li>
+        </ul>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <small class="text-footer-muted">© 2026 Desarrollo Web Profesional - IDGS</small>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+        <a href="#"><i class="bi bi-playstation"></i></a>
+
+      </div>
+    </div>
+  </div>
+</footer>
